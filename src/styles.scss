@@ -1,4 +1,38 @@
 /* You can add global styles to this file, and also import other style files */
+@charset "utf-8";
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+@import url("https://fonts.googleapis.com/css2?family=Lora:wght@700&family=Roboto:ital,wght@0,400;0,700;1,400;1,700&display=swap");
+
+// Set your brand colors
+$liberty: #485696;
+$platinum: #e7e7e7;
+$dark-green-jungle: #041f1e;
+$indian-red: #db5461;
+
+// Update Bulma's global variables
+$family-secondary: "Lora";
+$family-primary: "Roboto";
+$family-sans-serif: "Roboto", sans-serif;
+$primary: $indian-red;
+
+@import "bulma";
+// @import "sass/utilities/_all.sass";
+// @import "sass/base/_all.sass";
+// @import "sass/elements/button.sass";
+// @import "sass/elements/container.sass";
+// @import "sass/elements/title.sass";
+// @import "sass/form/_all.sass";
+// @import "sass/components/navbar.sass";
+// @import "sass/layout/hero.sass";
+// @import "sass/layout/section.sass";
+
+html,
+body {
+  height: 100%;
+  overflow: auto;
+}
+
+body {
+  margin: 0;
+  font-family: $family-primary, "Helvetica Neue", sans-serif;
+}
