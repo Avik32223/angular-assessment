@@ -1,6 +1,9 @@
+<app-navigation></app-navigation>
 <div class="row main" id="wrapper" (scroll)="scrollHandler($event)">
   <div class="main_grid col-md-3" *ngFor="let grid of gridData; let i = index">
-    <button class="btn btn-info main_grid-button" (click)="handleAlert(i)">Click Me</button>
+    <button class="btn btn-info main_grid-button" (click)="handleAlert(i)">
+      Click Me
+    </button>
   </div>
 </div>
 <div *ngIf="isLoading">
