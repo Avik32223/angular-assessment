@@ -1,16 +1,26 @@
-<div class="input-group forms">
-  <label for="timer">Timer Limit</label>
-  <input type="number" class="form-control" placeholder="Enter timer limit" id="timer" aria-describedby="basic-addon1" (input)="setInput($event)" />
+<div class="field has-addons">
+  <div class="control">
+    <input
+      class="input"
+      type="text"
+      placeholder="Timer Limit"
+      id="timer"
+      (input)="setInput($event)"
+    />
+  </div>
+  <div class="control">
+    <button (click)="handleButton()" class="button is-info">
+      {{ IsStartVisible() ? "Start" : "Pause" }}
+    </button>
+  </div>
 </div>
-
-<div class="buttonStyle">
-  <button class="btn btn-primary" style="margin-right: 2rem;" (click)="handleButton()">
-    {{ IsStartVisible() ? "Start" : "Pause" }}
+<div class="container mb-3">
+  <button class="button is-danger is-outlined" (click)="handleReset()">
+    Reset
   </button>
-
-  <button class="btn btn-info" (click)="handleReset()">Reset</button>
 </div>
 
-<div *ngIf="pausedTime.length > 0" class="pauseContent">
+<div *ngIf="pausedTime.length > 0">
+  <h1 class="subtitle">Logs</h1>
   <div *ngFor="let time of pausedTime">Paused at {{ time }}</div>
 </div>

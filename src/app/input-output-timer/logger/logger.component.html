@@ -1,6 +1,6 @@
-<div class="logger">
-  <h2>Started Logs</h2>
-  <div *ngIf="startList.length > 0" class="logContent">
+<div class="">
+  <div *ngIf="startList.length > 0">
+    <h2 class="subtitle">Logs</h2>
     <div *ngFor="let time of startList">
       Started at {{ time | date: "dd-mm-yyyy hh:mm:ss a" }}
     </div>
