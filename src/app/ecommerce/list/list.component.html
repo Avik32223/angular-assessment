@@ -1,10 +1,25 @@
-<div *ngFor="let product of products" class="col-sm-5 list">
-  <img
-    class="list_image"
-    src="{{ product.image }}"
-    alt="{{ product.product_name }}"
-  />
-  <span class="list_title">{{ product.product_name }}</span>
-  <span class="list_price">₹ {{ product.price }}</span>
-  <div class="list_desc">{{ product.description }}</div>
+<div *ngFor="let product of products" class="column is-6">
+  <div class="box">
+    <article class="media">
+      <div class="media-left">
+        <figure class="image is-64x64">
+          <img
+            src="{{ product.image }}"
+            alt="{{ product.product_name }}"
+            style="height: 64px; object-fit: cover;"
+          />
+        </figure>
+      </div>
+      <div class="media-content">
+        <div class="content">
+          <p>
+            <strong>{{ product.product_name }}</strong> -
+            <small>₹ {{ product.price }}</small>
+            <br />
+            {{ product.description }}.
+          </p>
+        </div>
+      </div>
+    </article>
+  </div>
 </div>

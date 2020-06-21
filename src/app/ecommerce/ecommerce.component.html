@@ -50,6 +50,13 @@
     </section>
   </div>
   <div *ngIf="!isGridSelected">
-    <app-list [products]="filteredProducts"></app-list>
+    <section class="section">
+      <div class="container">
+        <app-list
+          class="columns is-multiline is-mobile"
+          [products]="filteredProducts"
+        ></app-list>
+      </div>
+    </section>
   </div>
 </div>
