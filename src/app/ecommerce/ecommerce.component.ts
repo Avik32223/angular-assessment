@@ -1,10 +1,10 @@
-import { Component, OnInit, OnChanges } from '@angular/core';
-import { productList } from './constants';
+import { Component, OnInit, OnChanges } from "@angular/core";
+import { productList } from "./constants";
 
 @Component({
-  selector: 'app-ecommerce',
-  templateUrl: './ecommerce.component.html',
-  styleUrls: ['./ecommerce.component.scss'],
+  selector: "app-ecommerce",
+  templateUrl: "./ecommerce.component.html",
+  styleUrls: ["./ecommerce.component.scss"],
 })
 export class EcommerceComponent implements OnInit {
   products: {
@@ -24,12 +24,14 @@ export class EcommerceComponent implements OnInit {
     image: string;
   }[];
   filteredPrice: number[];
+  filterOpen: boolean;
   constructor() {
     this.products = productList;
     this.isGridSelected = true;
     this.priceList = [];
     this.filteredProducts = [];
     this.filteredPrice = [];
+    this.filterOpen = false;
   }
 
   ngOnInit(): void {
@@ -73,5 +75,9 @@ export class EcommerceComponent implements OnInit {
       this.filteredPrice.push(price);
       this.getFilteredItem();
     }
+  }
+
+  filterToggle() {
+    this.filterOpen = !this.filterOpen;
   }
 }

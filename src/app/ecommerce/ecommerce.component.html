@@ -1,62 +1,81 @@
 <app-navigation></app-navigation>
-
-<div class="row main">
-  <div class="main_selection">
-    <span (click)="onGridSelected()"
-      ><img class="main_grid" src="../../assets/grid.svg" alt="grid"
-    /></span>
-    <span class="main_separator" (click)="onListSelected()"
-      ><img src="../../assets/list.svg" alt="grid"
-    /></span>
+<hr class="divider mt-0 mb-0" />
+<section class="section">
+  <div class="container">
+    <h1 class="title is-size-3 has-text-grey is-family-secondary mb-5">
+      Products
+    </h1>
   </div>
-  <div class="dropdown main_dropdown">
-    <button
-      class="btn btn-secondary dropdown-toggle"
-      type="button"
-      id="dropdownMenuButton"
-      data-toggle="dropdown"
-      aria-haspopup="true"
-      aria-expanded="false"
-    >
-      Filter By Price <span class="caret"></span>
-    </button>
-    <div class="dropdown-menu item" aria-labelledby="dropdownMenuButton">
-      <div *ngFor="let price of priceList">
-        <div class="dropdown-item" class="list" (click)="filteredList(price)">
-          Price: {{ price }}
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="main_priceContent">
-    <div *ngFor="let priceFilter of filteredPrice" class="main_price">
-      {{ priceFilter }}
-      <span
-        class="main_price_cancel"
-        aria-hidden="true"
-        (click)="removePrice(priceFilter)"
-        >&times;</span
+  <div class="container mb-5">
+    <div class="columns is-vcentered">
+      <div
+        class="column is-vcentered"
+        style="display: flex; flex-direction: row; align-items: center;"
       >
+        <div class="dropdown mr-3" [ngClass]="{ 'is-active': filterOpen }">
+          <div class="dropdown-trigger">
+            <button
+              class="button"
+              aria-haspopup="true"
+              aria-controls="dropdown-menu"
+              (click)="filterToggle()"
+            >
+              <span>Filter by price</span>
+              <span class="icon is-small">
+                <i class="fas fa-angle-down" aria-hidden="true"></i>
+              </span>
+            </button>
+          </div>
+          <div class="dropdown-menu" id="dropdown-menu" role="menu">
+            <div class="dropdown-content">
+              <a
+                (click)="filteredList(price)"
+                *ngFor="let price of priceList"
+                class="dropdown-item"
+              >
+                ₹ {{ price }}
+              </a>
+            </div>
+          </div>
+        </div>
+        <span
+          *ngFor="let priceFilter of filteredPrice"
+          class="tag is-medium mr-1"
+        >
+          {{ priceFilter }}
+          <button class="delete is-small" (click)="removePrice(priceFilter)">
+            &times;
+          </button>
+        </span>
+      </div>
+      <div class="column is-narrow">
+        <button class="button mr-2" (click)="onGridSelected()">
+          <span class="icon is-small">
+            <img class="main_grid" src="../../assets/grid.svg" alt="grid" />
+          </span>
+        </button>
+        <button class="button" (click)="onListSelected()">
+          <span class="icon is-small">
+            <img class="main_grid" src="../../assets/list.svg" alt="list" />
+          </span>
+        </button>
+      </div>
     </div>
   </div>
   <div *ngIf="isGridSelected">
-    <section class="section">
-      <div class="container">
-        <app-grid
-          class="columns is-multiline is-mobile"
-          [products]="filteredProducts"
-        ></app-grid>
-      </div>
-    </section>
+    <div class="container">
+      <app-grid
+        class="columns is-multiline is-mobile"
+        [products]="filteredProducts"
+      ></app-grid>
+    </div>
   </div>
   <div *ngIf="!isGridSelected">
-    <section class="section">
-      <div class="container">
-        <app-list
-          class="columns is-multiline is-mobile"
-          [products]="filteredProducts"
-        ></app-list>
-      </div>
-    </section>
+    <div class="container">
+      <app-list
+        class="columns is-multiline is-mobile"
+        [products]="filteredProducts"
+      ></app-list>
+    </div>
   </div>
-</div>
+</section>
