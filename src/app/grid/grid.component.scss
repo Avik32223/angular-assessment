@@ -1,28 +1,5 @@
-.main {
-  position: relative;
-  top: 3rem;
-  height: 100%;
-  overflow: auto;
-
-  &_grid {
-    width: 200px;
-    height: 200px;
-    border: 1px solid #7e7e7e;
-    margin-right: 1rem;
-    margin-bottom: 1rem;
-    position: relative;
-
-    &-button {
-      position: absolute;
-      left: 50%;
-      top: 50%;
-      transform: translate(-50%, -50%);
-    }
-  }
-}
-
 .spinner {
-  margin: 100px auto 0;
+  margin: 0 auto;
   width: 70px;
   text-align: center;
 }

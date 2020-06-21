@@ -1,16 +1,32 @@
 <app-navigation></app-navigation>
-<div class="row main" id="wrapper" (scroll)="scrollHandler($event)">
-  <div class="main_grid col-md-3" *ngFor="let grid of gridData; let i = index">
-    <button class="btn btn-info main_grid-button" (click)="handleAlert(i)">
-      Click Me
-    </button>
+<hr class="divider mt-0 mb-0" />
+<section class="section">
+  <div class="container mb-5">
+    <div class="title is-size-3 has-text-grey is-family-secondary">
+      Infinitely loading Grid
+    </div>
   </div>
-</div>
-<div *ngIf="isLoading">
-  <div class="spinner">
-    <h3>Loading</h3>
-    <div class="bounce1"></div>
-    <div class="bounce2"></div>
-    <div class="bounce3"></div>
+  <div
+    id="infinite-grid-wrapper"
+    style="height: 600px; overflow: auto;"
+    (scroll)="scrollHandler($event)"
+  >
+    <div class="section pt-2 pl-4 columns is-multiline">
+      <div class="column is-12" *ngFor="let grid of gridData; let i = index">
+        <div class="box">
+          <button class="button is-primary" (click)="handleAlert(i)">
+            Click Me
+          </button>
+        </div>
+      </div>
+    </div>
+    <div *ngIf="isLoading">
+      <div class="spinner">
+        <h3>Loading</h3>
+        <div class="bounce1"></div>
+        <div class="bounce2"></div>
+        <div class="bounce3"></div>
+      </div>
+    </div>
   </div>
-</div>
+</section>
