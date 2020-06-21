@@ -1,10 +1,25 @@
-<div *ngFor="let product of products" class="col-sm-2 grid">
-  <img
-    class="grid_image"
-    src="{{ product.image }}"
-    alt="{{ product.product_name }}"
-  />
-  <span class="grid_title">{{ product.product_name }}</span>
-  <span class="grid_price">₹ {{ product.price }}</span>
-  <div class="grid_description">{{ product.description }}</div>
+<div *ngFor="let product of products" class="column is-3">
+  <div class="card">
+    <div class="card-image">
+      <figure class="image is-4by3">
+        <img
+          src="{{ product.image }}"
+          alt="{{ product.product_name }}"
+          style="object-fit: cover;"
+        />
+      </figure>
+    </div>
+    <div class="card-content">
+      <div class="media">
+        <div class="media-content">
+          <p class="title is-4">{{ product.product_name }}</p>
+          <p class="subtitle is-6">₹ {{ product.price }}</p>
+        </div>
+      </div>
+
+      <div class="content">
+        {{ product.description }}
+      </div>
+    </div>
+  </div>
 </div>

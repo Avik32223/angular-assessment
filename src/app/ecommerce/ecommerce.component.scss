@@ -1,81 +1,81 @@
-.main {
-  width: 80vw;
-  position: relative;
-  left: -18rem;
-  top: 6rem;
+// .main {
+//   width: 80vw;
+//   position: relative;
+//   left: -18rem;
+//   top: 6rem;
 
-  &_selection {
-    position: relative;
-    width: 8%;
-    margin: 2rem;
-    left: 100rem;
-    bottom: 3rem;
-    font-size: 3rem;
-    border: 1px solid #e4e4e4;
+//   &_selection {
+//     position: relative;
+//     width: 8%;
+//     margin: 2rem;
+//     left: 100rem;
+//     bottom: 3rem;
+//     font-size: 3rem;
+//     border: 1px solid #e4e4e4;
 
-    img {
-      cursor: pointer;
-    }
-  }
+//     img {
+//       cursor: pointer;
+//     }
+//   }
 
-  &_dropdown {
-    position: relative;
-    left: -12rem;
-    top: -9rem;
-    border: 1px solid #e4e4e4;
-    width: 12%;
-  }
+//   &_dropdown {
+//     position: relative;
+//     left: -12rem;
+//     top: -9rem;
+//     border: 1px solid #e4e4e4;
+//     width: 12%;
+//   }
 
-  &_priceContent {
-    width: 85%;
-  }
-  &_price {
-    position: relative;
-    top: -15rem;
-    left: 3rem;
-    margin: 2rem;
-    width: 10rem;
-    height: 4rem;
-    border: 1px solid #e4e4e4;
-    display: inline-block;
-    padding: 10px;
-    text-align: center;
-    border-radius: 10px;
-    transition: ease-in-out all 0.5s;
+//   &_priceContent {
+//     width: 85%;
+//   }
+//   &_price {
+//     position: relative;
+//     top: -15rem;
+//     left: 3rem;
+//     margin: 2rem;
+//     width: 10rem;
+//     height: 4rem;
+//     border: 1px solid #e4e4e4;
+//     display: inline-block;
+//     padding: 10px;
+//     text-align: center;
+//     border-radius: 10px;
+//     transition: ease-in-out all 0.5s;
 
-    &_cancel {
-      position: absolute;
-      right: 1rem;
-      cursor: pointer;
-    }
+//     &_cancel {
+//       position: absolute;
+//       right: 1rem;
+//       cursor: pointer;
+//     }
 
-    &:hover {
-      background: #e4e4e4;
-      color: black;
-    }
-  }
+//     &:hover {
+//       background: #e4e4e4;
+//       color: black;
+//     }
+//   }
 
-  &_grid {
-    position: relative;
-    left: 2rem;
-  }
+//   &_grid {
+//     position: relative;
+//     left: 2rem;
+//   }
 
-  &_separator {
-    position: relative;
-    right: -4rem;
-  }
-}
+//   &_separator {
+//     position: relative;
+//     right: -4rem;
+//   }
+// }
 
-.item {
-  height: 30rem;
-  overflow: scroll;
-}
+// .item {
+//   height: 30rem;
+//   overflow: scroll;
+// }
 
-.list {
-  margin: 1rem;
-  cursor: pointer;
+// .list {
+//   margin: 1rem;
+//   cursor: pointer;
 
-  &:hover {
-    background: #e4e4e4;
-  }
-}
+//   &:hover {
+//     background: #e4e4e4;
+//   }
+// }
